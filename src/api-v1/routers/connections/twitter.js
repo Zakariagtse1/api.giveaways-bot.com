@@ -1,7 +1,7 @@
 module.exports = (router, connectionsPath, users, passport, config) => {
     router.get(connectionsPath + "/twitter/login", (req, res, next) => {
         req.session._connectionCallback = req.query.url || '/';
-        req.session._beta = req.query.__beta || false;
+        req.session._beta = req.query.__beta || true;
         next();
     }, passport.authenticate("twitter", {
         scope: config.auth.twitter.scopes
