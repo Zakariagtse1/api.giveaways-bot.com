@@ -3,7 +3,7 @@
 const users = require("./src/database/models/users.js");
 const invite_checker = require("./src/database/models/invite-checker.js")
 const { AutoPoster } = require('topgg-autoposter')
-const poster = AutoPoster('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwOTQ4NjY4Njk4NjE3ODYxMCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjQ0ODI3OTQzfQ.C-9YLxS9pmQIZE_JU-BULkKfcfmGYmPNQIXAtwYT-C4', client)
+const poster = AutoPoster(process.env.topgg-token, client)
 const guild_settings = require("./src/database/models/guild-settings.js")
 const config = require("./award.config.js");
 const { REST } = require("@discordjs/rest");
