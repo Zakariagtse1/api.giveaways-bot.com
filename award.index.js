@@ -13,7 +13,7 @@ require("./src/database/connect.js")();
 const axios = require("axios");
 const fs = require("fs");
 const { AutoPoster } = require('topgg-autoposter')
-const poster = AutoPoster(process.env.topgg-token, client)
+const poster = AutoPoster(process.env.topggtoken, client)
 const _commands = [];
 
 //------------------------------------------------------------------------------------//
