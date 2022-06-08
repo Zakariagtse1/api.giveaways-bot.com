@@ -50,6 +50,7 @@
     "passport-twitter": "^1.0.4",
     "passport-youtube-v3": "^2.1.0",
     "tough-cookie-filestore2": "^1.0.0",
+    "topgg-autoposter": "^2.0.1",
     "user-instagram": "^3.0.0",
     "uuid": "^8.3.2",
     "ws": "^8.4.2"
