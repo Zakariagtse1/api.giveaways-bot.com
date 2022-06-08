@@ -2,8 +2,6 @@
 
 const users = require("./src/database/models/users.js");
 const invite_checker = require("./src/database/models/invite-checker.js")
-const { AutoPoster } = require('topgg-autoposter')
-const poster = AutoPoster(process.env.topgg-token, client)
 const guild_settings = require("./src/database/models/guild-settings.js")
 const config = require("./award.config.js");
 const { REST } = require("@discordjs/rest");
@@ -14,6 +12,8 @@ const client = new Discord.Client(config.client);
 require("./src/database/connect.js")();
 const axios = require("axios");
 const fs = require("fs");
+const { AutoPoster } = require('topgg-autoposter')
+const poster = AutoPoster(process.env.topgg-token, client)
 const _commands = [];
 
 //------------------------------------------------------------------------------------//
