@@ -18,11 +18,11 @@ module.exports = {
     auth: {
         discord: {
             id: "909486686986178610",
-            secret: "28J0RVIq0vC-SCwTElNAztT1HrSwvxAp",
+            secret: "O3vTsCFXOK5kCZPBcIDjnrwSOuqZAwzZ",
             callback: "https://giveaways-api.herokuapp.com/v1/auth/callback",
             scopes: [ "identify", "guilds" ],
             prompt: "none",
-            botInvite: "https://discord.com/oauth2/authorize?client_id=882669141713100800&scope=bot%20applications.commands&response_type=code&permissions=8",
+            botInvite: "https://discord.com/oauth2/authorize?client_id=909486686986178610&scope=bot%20applications.commands&response_type=code&permissions=8",
             invite: "https://discord.gg/jTd6GpGuFk"
         },
       youtube: {
