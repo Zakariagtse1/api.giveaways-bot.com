@@ -17,8 +17,8 @@ module.exports = {
     },
     auth: {
         discord: {
-            id: "882669141713100800",
-            secret: "SK7XZH7e7bP_2AHK-P1pCqu0uES9Giji",
+            id: "909486686986178610",
+            secret: process.env.secret,
             callback: "https://giveaways-api.herokuapp.com/v1/auth/callback",
             scopes: [ "identify", "guilds" ],
             prompt: "none",
