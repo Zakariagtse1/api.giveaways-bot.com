@@ -27,7 +27,7 @@ const updateActions = async ({ channel = false, title, color, guild = [] }) => {
   client.user.setStatus("ONLINE");
   client.user.setActivity("/help | GiveAways | " + client.guilds.cache.size.toLocaleString() + " guilds", { type: "WATCHING" });
 }
-});
+})
 
   if (channel) {
     try {
