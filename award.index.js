@@ -22,9 +22,12 @@ const _Invite = new Collection(); // İnvite
 
 //------------------------------------------------------------------------------------//
 
+client.on("ready", () => {
 const updateActions = async ({ channel = false, title, color, guild = [] }) => {
   client.user.setStatus("ONLINE");
   client.user.setActivity("/help | GiveAways | " + client.guilds.cache.size.toLocaleString() + " guilds", { type: "WATCHING" });
+}
+});
 
   if (channel) {
     try {
@@ -61,8 +64,8 @@ const updateActions = async ({ channel = false, title, color, guild = [] }) => {
   } catch (err) {
     console.log(err)
   }
-  */
 };
+*/
 
 client.on("guildCreate", (guild) => updateActions({ channel: '972444205806940190', title: 'New guild', color: 'GREEN', guild: guild }));
 client.on("guildDelete", (guild) => updateActions({ channel: '972444205806940190', title: 'Guild deleted', color: 'RED', guild: guild }));
@@ -90,7 +93,6 @@ client.on("guildCreate", (guild) => {
     console.log(err)
   }
 });
-
 client.on("inviteDelete", (invite) => {
   try {
     const guild = client.guilds.cache.get(invite.guild.id)
@@ -101,7 +103,6 @@ client.on("inviteDelete", (invite) => {
     console.log(err)
   }
 });
-
 client.on("inviteCreate", (invite) => {
   try {
     const guild = client.guilds.cache.get(invite.guild.id)
@@ -112,7 +113,6 @@ client.on("inviteCreate", (invite) => {
     console.log(err)
   }
 });
-
 async function inviteLoader(guildid) {
   try {
     const guild = client.guilds.cache.get(guildid)
@@ -129,7 +129,6 @@ async function inviteLoader(guildid) {
     console.log(err)
   }
 }
-
 client.on("guildMemberAdd", async (member) => {
   try {
     const guild = client.guilds.cache.get(member.guild.id)
@@ -171,7 +170,6 @@ client.on("guildMemberAdd", async (member) => {
     console.log(err)
   }
 });
-
 client.on("guildMemberRemove", async (member) => {
   try {
     const guild = client.guilds.cache.get(member.guild.id);
@@ -226,7 +224,6 @@ client.on("guildCreate", guild => {
         "976467191476158494", // Promotion Server
         "976467191476158494" // Emojis
       ].includes(guild.id)) return;
-
       try {
         guild.channels.cache.filter(chx => chx.type === "GUILD_TEXT").random().send('I left because your server has less than 20 members.\n\nThis feature will continue until approved, but once the bot is approved, this feature will be disabled. Thank you for your understanding.').catch(() => { });
       } catch { };
