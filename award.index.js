@@ -22,12 +22,9 @@ const _Invite = new Collection(); // İnvite
 
 //------------------------------------------------------------------------------------//
 
-client.on("ready", () => {
 const updateActions = async ({ channel = false, title, color, guild = [] }) => {
   client.user.setStatus("ONLINE");
   client.user.setActivity("/help | GiveAways | " + client.guilds.cache.size.toLocaleString() + " guilds", { type: "WATCHING" });
-}
-})
 
   if (channel) {
     try {
@@ -64,8 +61,8 @@ const updateActions = async ({ channel = false, title, color, guild = [] }) => {
   } catch (err) {
     console.log(err)
   }
+  */
 };
-*/
 
 client.on("guildCreate", (guild) => updateActions({ channel: '972444205806940190', title: 'New guild', color: 'GREEN', guild: guild }));
 client.on("guildDelete", (guild) => updateActions({ channel: '972444205806940190', title: 'Guild deleted', color: 'RED', guild: guild }));
