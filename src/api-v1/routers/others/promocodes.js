@@ -1,4 +1,4 @@
-const Partners = require("../../../database/models/partners");
+const Promocodes = require("../../../database/models/promo");
 const config = require("../../../../award.config.js");
 const express = require("express");
 const router = express.Router();
@@ -9,7 +9,7 @@ module.exports = client => {
             res.json({
                 success: true,
                 message: req.locale["global"]["successful"],
-                data: await Partners.find({}, { _id: 0, __v: 0 })
+                data: await Promocodes.find({}, { _id: 0, __v: 0 })
             });
         } catch(err) {
             console.log(err);
