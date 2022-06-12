@@ -506,6 +506,16 @@ module.exports = client => {
     app.use("/v1/partners", __partnersDelete);
     // </PARTNERS DELETE> //
 
+    // <PROMOCODES ADD> //
+    const __promocodesAdd = require("./routers/promocodes/add.js")(client);
+    app.use("/v1/promocodes", __promocodesAdd);
+    // </PROMOCODES ADD> //
+
+    // <PROMOCODES DELETE> //
+    const __promocodesDelete = require("./routers/promocodes/delete.js")(client);
+    app.use("/v1/promocodes", __promocodesDelete);
+    // </PROMOCODES DELETE> //
+
     // <404> //
     app.use((req, res) => {
         try {
