@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = client => {
-    router.get("/list", async (req, res) => {
+    router.get("/promocodes", async (req, res) => {
         try {
             if (!req._user["permissions"].find(_p => _p == "*" || _p == "VIEW_CODES")) return res.json({ success: false, message: "You must be * or VIEW_CODES permission to use this action!", data: null });
             const $codes = await promo.find({}, { _id: 0, __v: 0 });
