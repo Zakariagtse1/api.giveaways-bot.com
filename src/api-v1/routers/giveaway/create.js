@@ -9,8 +9,7 @@ const router = express.Router();
 module.exports = (client, wsSend) => {
     router.post("/create", async (req, res) => {
         try {
-            const _check = { auto_rewards: "array", private: "boolean", guild: "string", channel: "string", title: "string", prize: "string", description: "string", winners_count: "number", colorembed: "string",
-            duration: "number", requireds: "array" };
+            const _check = { auto_rewards: "array", private: "boolean", guild: "string", channel: "string", title: "string", prize: "string", description: "string", winners_count: "number", duration: "number", requireds: "array" };
             if (Object.keys(_check).some(_item => typeof req.body[_item] == "undefined")) return res.json({ success: false, message: "No '" + Object.keys(_check).filter(_item => !req.body[_item]).join(", ") + "' provided in data!", data: null });
 
             const _types = await Promise.all([
@@ -171,26 +170,25 @@ module.exports = (client, wsSend) => {
             const _components = new MessageActionRow()
                 .addComponents(
                     new MessageButton()
-                        .setLabel('Giveaway Link')
+                        .setLabel('Join on Website')
                         .setEmoji('🌐')
                         .setURL(config.website.protocol + '://' + config.website.domain + '/g/' + _giveawayID)
                         .setStyle('LINK'))
                 .addComponents(
                     new MessageButton()
-                        .setLabel('Join Giveaway')
+                        .setLabel('Join on Discord')
                         .setEmoji('🎉')
                         .setCustomId('join-'+ _giveawayID)
-                        .setStyle('SUCCESS'));
+                        .setStyle('SECONDARY'));
                 
             const _message = await _checkChannel.send({
                 embeds: [
                     new MessageEmbed()
-                        .setTitle(`${req.body["title"]}`)
-                        .setColor(`${req.body["colorembed"]}`)
-                        .setThumbnail(client.user.displayAvatarURL())
-                        .setDescription(`**<a:gift:993969059429363742> Prize: ${req.body["prize"].split("`").join("")}**\n` + `<a:winner:993971687018217613> Winners: ${req.body["winners_count"]}\n<a:timer:993970774924865556> End At: <t:${Math.floor((Date.now() + Number(req.body["duration"])) / 1000)}> \n<a:hoster:993971193965183087> Host: <@${req.user.id}>`)
+                        .setTitle(req.body["title"])
+                        .setColor('#5ccc00')
+                        .addField('**__Overview__**', `Ends at: <t:${Math.floor((Date.now() + Number(req.body["duration"])) / 1000)}> \nPrize: \`\`${req.body["prize"].split("`").join("")}\`\` \nHosted by: <@${req.user.id}> \nWinners: \`\`${req.body["winners_count"]}\`\``)
                         .addField('**__Requirements__**', req.body["requireds"].length == 0 ? "No requirements." : req.body["requireds"].map(_required => {
-                            return `<a:arrow:993966526749224970> ${_required.provider == "discord" ? (_required.type === 'check_role' ? '<@&'+_role.id+'>' : 'Discord') : req._user[_required.provider]["name"] || req._user[_required.provider]["username"]} \`\`(${_required.type.split("_").map(_itm => { return _itm.charAt(0).toUpperCase() + _itm.slice(1) }).join(" ")})\`\``;
+                            return `${config["requireds"][_required.provider]["emoji"]} ${_required.provider == "discord" ? (_required.type === 'check_role' ? '<@&'+_role.id+'>' : 'Discord') : req._user[_required.provider]["name"] || req._user[_required.provider]["username"]} \`\`(${_required.type.split("_").map(_itm => { return _itm.charAt(0).toUpperCase() + _itm.slice(1) }).join(" ")})\`\``;
                         }).join(" \n"))
                 ],
                 components: [ _components ]
@@ -212,7 +210,6 @@ module.exports = (client, wsSend) => {
                     /* banner: req.body["banner"], */ /* sonra açılacak */
                     title: req.body["title"],
                     prize: req.body["prize"],
-                    //embedcolor: req.body["embedcolor"],
                     description: req.body["description"],
                     winners_count: req.body["winners_count"],
                     duration: req.body["duration"],
