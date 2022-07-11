@@ -26,28 +26,28 @@ module.exports = {
             invite: "https://discord.gg/jTd6GpGuFk"
         },
       youtube: {
-            id: "634560038022-ms6u5936jn52vl4jjsu6p1sh4l15g7bk.apps.googleusercontent.com",
-            secret: "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",
+            id: "",
+            secret: "",
             callback: "https://giveaways-api.herokuapp.com/v1/connections/youtube/callback",
             scopes: [ "https://www.googleapis.com/auth/youtube.readonly" ],
-            apiKey: "AIzaSyCg-SsCCLdc8myIkivK1yEKcVlc-1uO12g"
+            apiKey: ""
         },
         github: {
-            id: "3405d2e8562b36968e80",
-            secret: "331c421e371108101733aeed343607d15aa128dd",
+            id: "",
+            secret: "",
             callback: "https://giveaways-api.herokuapp.com/v1/connections/github/callback",
             scopes: [ "read:user" ]
         },
         twitter: {
-            id: "eURqdEVJYTEzSjRNNFJaR3o1czM6MTpjaQ",
-            secret: "20w4t2wyLyR_wu1FfNyliLDSzf4T3MCwcx0NCKpLAHhLDO0YgU",
+            id: "",
+            secret: "",
             callback: "https://giveaways-api.herokuapp.com/v1/connections/twitter/callback",
             scopes: [ "account.follows.read" ],
             apiKey: "arBiuvZpp1Xui8S31N65cD5kXSsHHQ57ZQ1xaM6BN9N2A"
         },
         twitch: {
-            id: "h8tapdnhmo1sy0fdx8riweqks1ltws",
-            secret: "p55pnl649mkin0cbx2aqknbftgj4ov",
+            id: "",
+            secret: "",
             callback: "https://giveaways-api.herokuapp.com/v1/connections/twitch/callback",
             scopes: [ "user:read:follows", "channel:read:subscriptions" ]
         },

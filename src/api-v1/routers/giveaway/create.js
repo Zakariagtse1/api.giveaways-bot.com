@@ -52,7 +52,7 @@ module.exports = (client, wsSend) => {
             if (!_checkMember.permissions.has(Permissions.FLAGS[config.giveawayPerm])) return res.json({ success: false, message: req.locale["giveaway"]["create"]["access_denied"], data: null });
             const _checkChannel = await _checkGuild.channels.fetch(req.body["channel"]).catch(() => {});
             if (!_checkChannel) return res.json({ success: false, message: req.locale["giveaway"]["create"]["channel_not_found"], data: null });
-            if (_checkChannel.type !== "GUILD_TEXT") return res.json({ success: false, message: req.locale["giveaway"]["create"]["channel_type"], data: null });
+            if (_checkChannel.type !== "GUILD_TEXT", "GUILD_NEWS") return res.json({ success: false, message: req.locale["giveaway"]["create"]["channel_type"], data: null });
             if (Number(req.body["winners_count"]) < 1) return res.json({ success: false, message: req.locale["giveaway"]["create"]["winners_min"], data: null });
             if (Number(req.body["winners_count"]) > 10) return res.json({ success: false, message: req.locale["giveaway"]["create"]["winners_max"], data: null });
             if (Number(req.body["duration"]) < 60000) return res.json({ success: false, message: req.locale["giveaway"]["create"]["duration_min"], data: null });
