@@ -7,9 +7,9 @@ module.exports = client => {
     router.get("/team", async (req, res) => {
         try {
             const team = (await Promise.all(config.team.map(async member => {
-                const { data } = await axios.get("https://linkcord.js.org/api/v3/user/" + member.id).catch(() => {});
+                const { data } = await axios.get("https://api.lanyard.rest/v1/users/" + member.id).catch(() => {});
                 member.spotify = false;
-                member.user = data ? (data.data ? data.data || false : false) : false;
+                member.user = data ? (data.data.discord_user ? data.data.discord_user || false : false) : false;
                 return member;
             }))).filter(_m => typeof _m.user == "object");
             
