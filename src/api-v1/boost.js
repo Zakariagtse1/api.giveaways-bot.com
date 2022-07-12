@@ -1,5 +1,5 @@
 const boosts = require("../database/models/boosts.js");
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 const Discord = require("discord.js");
 
 module.exports = client => {

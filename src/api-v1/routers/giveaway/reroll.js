@@ -1,5 +1,5 @@
 const giveaways = require("../../../database/models/giveaways.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const benefits = require("../../../util/benefits");
 const Discord = require("discord.js");
 const Permissions = Discord.Permissions;

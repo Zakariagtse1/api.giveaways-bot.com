@@ -1,6 +1,6 @@
 const giveaways = require("../database/models/giveaways.js");
 const Users = require("../database/models/users.js");
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 const Discord = require("discord.js");
 
 module.exports = (client, wsSend) => {

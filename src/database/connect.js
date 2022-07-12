@@ -1,4 +1,4 @@
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 const { connect } = require("mongoose");
 
 module.exports = () => {

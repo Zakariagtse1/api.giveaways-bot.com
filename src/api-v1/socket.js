@@ -1,5 +1,5 @@
 const User = require("../database/models/users");
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 const { v4: id } = require("uuid");
 const WebSocket = require("ws");
 

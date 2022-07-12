@@ -1,7 +1,7 @@
 const promo = require('../database/models/promo.js');
 const users = require('../database/models/users.js');
 const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
-const config = require("../../award.config");
+const config = require("../../config");
 
 module.exports = {
     name: "redeem",

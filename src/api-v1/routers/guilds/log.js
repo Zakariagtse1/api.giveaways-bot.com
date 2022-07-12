@@ -1,5 +1,5 @@
 const logdata = require("../../../database/models/logs.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const { Permissions } = require("discord.js");
 const express = require("express");
 const router = express.Router();

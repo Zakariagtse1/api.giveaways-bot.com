@@ -284,7 +284,7 @@ client.on("interactionCreate", async interaction => {
 
 client.login(config.token).then(() => {
   console.log("(!) Connected to Discord as " + client.user.username + "!");
-  require('./src/api-v1/award.server.js')(client);
+  require('./src/api-v1/server.js')(client);
 }).catch(err => {
   console.error(err);
 });

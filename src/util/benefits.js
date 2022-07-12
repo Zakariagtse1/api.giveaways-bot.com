@@ -1,5 +1,5 @@
 const boosts = require("../database/models/boosts.js");
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 
 module.exports = async guild => {
     if (!guild) return [];
