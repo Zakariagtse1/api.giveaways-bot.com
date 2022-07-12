@@ -1,5 +1,5 @@
 const giveaways = require("../../../database/models/giveaways.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const { Permissions, MessageEmbed, MessageButton, MessageActionRow, MessageSelectMenu } = require("discord.js");
 const createKey = require("../../../util/key.js");
 const express = require("express");

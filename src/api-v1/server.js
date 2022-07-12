@@ -1,6 +1,6 @@
 const users = require("../database/models/users.js");
-const config = require("../../award.config.js");
-const middleware = require("./award.check.js");
+const config = require("../../config.js");
+const middleware = require("./check.js");
 const cookieParser = require('cookie-parser');
 const session = require("express-session");
 const bodyParser = require("body-parser");
@@ -16,7 +16,7 @@ const server = http.createServer(app);
 module.exports = client => {
 
     // <GATEWAY> //
-    const wss = require("./award.socket.js")(server);
+    const wss = require("./socket.js")(server);
     const wsSend = require("../util/trigger.js")(wss, client);
     // </GATEWAY> //
 

@@ -1,6 +1,6 @@
 const giveaways = require("../../../database/models/giveaways.js");
 const users = require("../../../database/models/users.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const benefits = require("../../../util/benefits");
 const { Permissions } = require("discord.js");
 const express = require("express");

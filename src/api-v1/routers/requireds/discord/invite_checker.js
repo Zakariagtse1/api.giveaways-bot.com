@@ -3,7 +3,7 @@ const giveaways = require("../../../../database/models/giveaways.js");
 const invite_checker = require("../../../../database/models/invite-checker.js")
 const guild_settings = require("../../../../database/models/guild-settings.js")
 const users = require("../../../../database/models/users.js");
-const config = require("../../../../../award.config.js");
+const config = require("../../../../../config.js");
 const axios = require("axios");
 
 module.exports = async (connections, user, giveaway, required, req, client) => {

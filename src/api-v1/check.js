@@ -1,5 +1,5 @@
 const settings = require("../database/models/settings.js");
-const config = require("../../award.config.js");
+const config = require("../../config.js");
 
 module.exports = async (user, locale) => {
     let app = await settings.findOne();

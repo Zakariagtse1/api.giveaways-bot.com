@@ -1,5 +1,5 @@
 const users = require("../../../../database/models/users.js");
-const config = require("../../../../../award.config.js");
+const config = require("../../../../../config.js");
 const fetch = require("node-superfetch");
 const axios = require("axios");
 

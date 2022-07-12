@@ -1,7 +1,7 @@
 const { Intents } = require("discord.js");
 
 module.exports = {
-    team: require("./award.team.js"),
+    team: require("./team.js"),
     client: {
         intents: [
             Intents.FLAGS.GUILDS,

@@ -1,4 +1,4 @@
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const express = require("express");
 const router = express.Router();
 const giveaways = require("../../../database/models/giveaways.js");

@@ -1,5 +1,5 @@
 const users = require("../../../database/models/users.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const { Permissions } = require("discord.js");
 const fetch = require("node-superfetch");
 const express = require("express");

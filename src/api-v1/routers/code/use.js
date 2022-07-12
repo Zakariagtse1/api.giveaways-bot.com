@@ -1,6 +1,6 @@
 const promo = require("../../../database/models/promo.js");
 const users = require("../../../database/models/users.js");
-const config = require("../../../../award.config.js");
+const config = require("../../../../config.js");
 const express = require("express");
 const router = express.Router();
 
